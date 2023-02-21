@@ -1,0 +1,17 @@
+- name: Extract
+  ansible.builtin.unarchive:
+    src: Отчеты.zip
+    dest: ./Отчеты
+- name: Convert to md
+  shell: pandoc --extract-media . "../Отчеты/Отчет анализ и архивация лог-файлов ППО.docx" -o "./Отчет анализ и архивация лог-файлов ППО.md"
+  args:
+    chdir: 'tmp'
+- name: change data
+  replace:
+    path: ./tmp/Отчет анализ и архивация лог-файлов ППО.md
+    regexp: 'Номер РР в СМКСС: C01265980.'
+    replace: 'Номер РР в СМКСС: Тестовый номер'
+- name: Convert to md
+  shell: pandoc "./Отчет анализ и архивация лог-файлов ППО.md" -o "../output/Отчет анализ и архивация лог-файлов ППО.docx"
+  args:
+    chdir: 'tmp'

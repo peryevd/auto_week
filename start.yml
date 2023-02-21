@@ -1,0 +1,16 @@
+---
+- name: Install all
+  hosts: localhost
+  tasks:
+    # ###### Settings camunda server:
+    - include: prepare.yml
+    - include: test.yml
+
+    # # ###### Settings camunda modeler:
+    # - include: camunda_modeler.yml
+
+    # ###### Settings excamad:
+    # - include: excamad.yml
+
+    # ####### Settings postgres:
+    # # - include: postgres.yml

@@ -1,0 +1,5 @@
+*.zip
+tmp
+Отчеты
+*.docx
+settings.json

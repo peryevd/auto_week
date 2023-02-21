@@ -1,0 +1,12 @@
+- name: Create dir for docx
+  file:
+    path: ./Отчеты
+    state: directory
+- name: Create dir for tmp files
+  file:
+    path: ./tmp
+    state: directory
+- name: Create output dir
+  file:
+    path: ./output
+    state: directory
