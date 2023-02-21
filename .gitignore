@@ -3,3 +3,4 @@ tmp
 Отчеты
 *.docx
 settings.json
+node_modules
